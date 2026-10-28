@@ -4,6 +4,10 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+  res.send('Cookie counter is running. Visit <a href="/visit-count">/visit-count</a>.');
+});
+
 app.use(cookieParser());
 
 app.get('/visit-count', (req, res) => {
